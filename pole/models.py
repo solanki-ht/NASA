@@ -20,7 +20,7 @@ class Subgrid(models.Model):
    sy_sub=models.IntegerField()
    sid_key=models.IntegerField()
    def __unicode__(self):
-      return str(self.id)
+      return 'G'+str(self.sid_sub)+"_"+'S'+str(self.sid_key)
 
 class Rover(models.Model):
    x_rover=models.IntegerField()
@@ -80,7 +80,7 @@ class mineral_distri(models.Model):
    name_min=models.CharField(max_length=200)
    quant_min=models.IntegerField()
    def __unicode__(self):
-      return 'G'+str(self.gid_min)+'S'+str(self.sid_min)+str(self.name_min)
+      return str(self.sid_min)+str(self.name_min)
 
 
 class searching_for(models.Model):
