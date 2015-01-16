@@ -1,0 +1,25 @@
+from django.db import models
+
+# Create your models here.
+class Minerals(models.Model):
+   mineral_id=models.IntegerField()
+   name=models.CharField(max_length=200)
+
+class Grid(models.Model):
+   x_grid=models.IntegerField()
+   y_grid=models.IntegerField()
+
+class Subgrid(models.Model):
+   sid_sub=models.ForeignKey('Grid')
+   sx_sub=models.IntegerField()
+   sy_sub=models.IntegerField()
+   sid_key=models.IntegerField()
+
+class Rover(models.Model):
+   x_rover=models.IntegerField()
+   y_rover=models.IntegerField()
+   h_rover=models.IntegerField()
+
+class searching_for(models.Model):
+   rid=models.ForeignKey('Rover')
+   mid=models.ForeignKey('Minerals')
